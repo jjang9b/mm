@@ -1,0 +1,16 @@
+{
+  "name": "mon",
+  "version": "1.0.0",
+  "dependencies": {
+    "chart.js": "^2.4.0",
+    "dateformat": "^2.0.0",
+    "ejs": "~2.4.1",
+    "express": "~4.13.1",
+    "fs-extra": "^2.0.0",
+    "graceful-fs": "^4.1.11",
+    "log4js": "^1.1.0",
+    "request": "^2.79.0",
+    "sync-exec": "^0.6.2",
+    "websocket": "^1.0.24"
+  }
+}

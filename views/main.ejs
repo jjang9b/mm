@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+  <title>Monitor dashboard</title>
+  <link rel="icon" href="img/m.png">
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/lib/highlight/styles/tomorrow.css" />
+  <link rel="stylesheet" href="css/lib/jquery.mCustomScrollbar.css" />
+  <link rel="stylesheet" href="css/lib/chartist.css">
+</head>
+<body>
+  <nav>
+    <div id="d_top_left" class="top_left">
+      <div class="float_left"><small><img src="img/m.png" /><b> Monitor dashboard</b></small></div>
+      <div class="float_left">
+        <p><small>서버 연결 상태</small></p>
+        <div class="status"></div>
+        <div class="now"></div>
+      </div>
+      <div class="float_left">
+        <p><small>버튼</small></p>
+        <button id="btn_desc" class="btn btn_yellow">설명</button>
+        <button id="btn_conn" class="btn btn_white">연결</button>
+        <button id="btn_console" class="btn btn_off">콘솔</button>
+        <button id="btn_speech" class="btn btn_white">경고음</button>
+      </div>
+    </div>
+    <div class="sep"></div>
+  </nav>
+  <div class="desc">
+    <p>모니터링 시스템 설명</p>
+    <button id="btn_desc_close" class="btn btn_black">닫기</button>
+  </div>
+  <article id="d_wrap">
+    <div id="d_box_group" class="box_group">
+      <div id="d_box" class="box">
+        <div class="box_left">
+          <div class="title">
+            <span></span>
+          </div>
+        </div>
+        <div class="box_right">
+          <span class="spend"></span>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div id="d_details" class="details">
+    <div id="d_result_conts" class="conts">
+      <div class="title_wrap">
+        <div class="title"><h4><span id="s_title"></span></h4></div>
+        <button id="btn_details_close" class="btn btn_black"><b>닫기</b></button>
+      </div>
+      <div id="d_result" class="result">
+        <div class="title">체크 결과</div>
+        <pre class="pre_result"><code id="c_result" class="json"></code></pre>
+      </div>
+      <div id="d_header" class="result">
+        <div class="title">응답 헤더</div>
+        <div class="float_left"><small><b>TIP.</b> api response header.</small></div>
+        <pre class="pre_result"><code id="c_header" class="json"></code></pre>
+      </div>
+      <div id="d_hq" class="result">
+        <div class="title">HQ 클라이언트 체크 - <b class="text_green">(6)</b>&nbsp;&nbsp;<button id="btn_hq_check" class="btn btn_white">체크</button></div>
+        <div class="float_left"><small><b>TIP.</b> 사용자 PC -> [service public domain] ajax 체크.</small></div>
+        <pre class="pre_result"><code id="c_hq" class="json"></code></pre>
+      </div>
+      <div id="d_network" class="result">
+        <div class="title">네트워크 체크 - <b class="text_green">(5)</b>&nbsp;&nbsp;<button id="btn_network_check" class="btn btn_white">체크</button></div>
+        <div class="float_left"><small><b>TIP.</b> monitoring server -> [service public domain] 네트워크 체크.</small></div>
+        <pre class="pre_result"><code id="c_network" class="powershell"></code></pre>
+      </div>
+      <div id="d_error" class="result">
+        <div class="title">에러</div>
+        <p class="error_code"></p>
+      </div>
+      <div class="clear_both"></div>
+      <div class="chart_result">
+        <div class="title">일별 차트</div>
+        <div id="d_chart"></div>
+      </div>
+      <div id="d_log" class="chart_log_result">
+        <div class="title">일별 차트 로그 (<span id="s_log_interval" class="text_yellow"></span>분 간격)</div>
+        <button id="btn_log_refresh" class="btn btn_white refresh">새로 고침</button>
+<pre id="c_log" class="pre_result"></pre>
+      </div>
+      <div class="empty"></div>
+    </div>
+  </div>
+  <div id="d_config" class="config">
+    <div class="conts">
+      <button id="btn_config_close" class="btn btn_black float_right"><b>닫기</b></button>
+      <pre><code class="json"></code></pre>
+    </div>
+  </div>
+  <footer><span>© CHROME 브라우저에 최적화 되어 있습니다.</span></footer>
+</body>
+</html>
+<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="js/lib/chartist.js"></script>
+<script type="text/javascript" src="js/lib/chartist-plugin-threshold.min.js"></script>
+<script type="text/javascript" src="js/lib/chartist-plugin-axistitle.min.js"></script>
+<script type="text/javascript" src="js/lib/highlight.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="js/lib/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="js/lib/underscore.min.js"></script>
+<script type="text/javascript" src="js/lib/dateformat.js"></script>
+<script type="text/javascript" src="js/main.js"></script>

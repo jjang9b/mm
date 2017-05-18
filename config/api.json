@@ -1,0 +1,12 @@
+{
+  "svr1:{
+    "LB": {
+      "url": "http://test.com/api",
+      "host": "test.com,
+      "port": 80 
+      "logPath": "",
+      "timeout": 5000,
+      "interval": 10000
+    }
+  }
+}
